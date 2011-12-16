@@ -3,7 +3,7 @@ Simple iptables based portknocking implementation
 firewall.sh port1 port2 port3 port4 port5 port6 port7 port8 port9 port10
 
 Uses the recent module to manage lists of IPs and where they are in the knock
-sequence. Once an IP reaches knock 10, they're next connection will be accepted.
+sequence. Once an IP reaches knock 10, their next connection will be accepted.
 The rule to accept established connections then applies.
 
 totportlist.sh keyfile
@@ -21,9 +21,5 @@ Uses netcat to attempt connections to each of the 10 ports in order. The
 attempts are backgrounded so we don't have to wait for every timeout, but this
 means you may need to adjust the length of the sleep command (I'm assuming the
 use of an implementation that supports fractional times--otherwise you're
-better off just doing
-
-	nc -w 1 -q 1 "$@"
-
-The -q option and redirection from standard input makes sure we don't hang if a
-port happens to be open.
+better off just doing nc -w 1 -q 1 "$@"). The -q option and redirection from
+standard input makes sure we don't hang if a port happens to be open.
