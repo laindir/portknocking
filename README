@@ -23,3 +23,10 @@ means you may need to adjust the length of the sleep command (I'm assuming the
 use of an implementation that supports fractional times--otherwise you're
 better off just doing nc -w 1 -q 1 "$@"). The -q option and redirection from
 standard input makes sure we don't hang if a port happens to be open.
+
+COPYRIGHT
+	Copyright 2012 Carl D Hamann
+	Copying and distribution of this file, with or without modification,
+	are permitted in any medium without royalty provided the copyright
+	notice and this notice are preserved.  This file is offered as-is,
+	without any warranty.
